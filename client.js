@@ -64,9 +64,6 @@ inventory.Explosivefinity.Value = true;
 inventory.Buildfinity.Value = true;
 inventory.BuildInfinity.Value = true;
 
-// ������������ ���������
-player.skin.Type.Value = 2;
-
 // ��������� ��� ������ �����
 Build.GetContext().BlocksSet.Value = BuildBlocksSet.AllClear;
 
