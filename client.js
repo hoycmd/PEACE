@@ -69,8 +69,3 @@ Build.GetContext().BlocksSet.Value = BuildBlocksSet.AllClear;
 
 // ������������ �����
 Spawns.GetContext().RespawnTime.Value = 0;
-
-
-
-
-
