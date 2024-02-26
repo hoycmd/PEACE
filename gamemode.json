@@ -1,11 +1,11 @@
 {
-  "Name": "<color=orange>PEACE|НО С ОРУЖИЕМ!!!</a>",
-  "Description": "<color=red>МИРНЫЙ РЕЖИМ НО С ОРУЖИЕМ!!!</a>",
+  "Name": "<color=orange>ПАРКУР НА АДМИНКУ</a>",
+  "Description": "<color=red>ПаРкУр На АдМиНкУ</a>",
   "StartClientVersion": 334,
   "MapLists": [
     {
       "MapListId": 324,
-      "Name": "ОРИГИНАЛЬНЫЕ КАРТЫ"
+      "Name": "Карты для режима:|ПАРКУР НА АДМИНКУ"
     }
   ],
   "Parameters": {
