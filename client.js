@@ -99,12 +99,12 @@ player.function.fly.Value = true;
 player.Ui.Hint.Value = "ТЫ ПОЛУЧИЛ ВИПКУ!!!";
 
 
-  var editor = 
-  AreaPlayerTriggerService.Get("editor");
-  editor.Tags = ["editor"];
-  editor.Enable = true;
-  editor.OnEnter.Add(function(player){
-  player.Build.Pipette.Value = true;
+var editor = 
+AreaPlayerTriggerService.Get("editor");
+editor.Tags = ["editor"];
+editor.Enable = true;
+editor.OnEnter.Add(function(player){
+player.Build.Pipette.Value = true;
 player.Build.BalkLenChange.Value = true;
 player.Build.SetSkyEnable.Value = true;
 player.Build.GenMapEnable.Value = true;
@@ -116,6 +116,72 @@ player.Build.BuildRangeEnable.Value = true;
 Damage.Damageln.Value = false;
 player.Damage.Damageln.Value = false;
 player.Build.BuildRangeEnable.Value = true;
+
+// ���� ������ ������ ������
+BreackGraph.PlayerBlockBoost = true;
+
+// ��������� ����
+Properties.GetContext().GameModeName.Value = "GameModes/Team Dead Match";
+TeamsBalancer.IsAutoBalance = true;
+Ui.GetContext().MainTimerId.Value = mainTimer.Id;
+// ������� �������
+Teams.Add("Blue", "Teams/Blue", { b: 1 });
+Teams.Add("Red", "Teams/Red", { r: 1 });
+var blueTeam = Teams.Get("Blue");
+var redTeam = Teams.Get("Red");
+blueTeam.Spawns.SpawnPointsGroups.Add(1);
+redTeam.Spawns.SpawnPointsGroups.Add(2);
+blueTeam.Build.BlocksSet.Value = BuildBlocksSet.Blue;
+redTeam.Build.BlocksSet.Value = BuildBlocksSet.Red;
+
+// ������ ���� ������� ������
+var maxDeaths = Players.MaxCount * 5;
+Teams.Get("Red").Properties.Get("Deaths").Value = maxDeaths;
+Teams.Get("Blue").Properties.Get("Deaths").Value = maxDeaths;
+// ������ ��� �������� � �����������
+LeaderBoard.PlayerLeaderBoardValues = [
+ {
+  Value: "Kills",
+  DisplayName: "Statistics/Kills",
+  ShortDisplayName: "Statistics/KillsShort"
+ },
+ {
+  Value: "Deaths",
+  DisplayName: "Statistics/Deaths",
+  ShortDisplayName: "Statistics/DeathsShort"
+ },
+ {
+  Value: "Spawns",
+  DisplayName: "Statistics/Spawns",
+  ShortDisplayName: "Statistics/SpawnsShort"
+ },
+ {
+  Value: "Scores",
+  DisplayName: "Statistics/Scores",
+  ShortDisplayName: "Statistics/ScoresShort"
+ }
+];
+LeaderBoard.TeamLeaderBoardValue = {
+ Value: "Deaths",
+ DisplayName: "Statistics\Deaths",
+ ShortDisplayName: "Statistics\Deaths"
+};
+// ��� ������� � ����������
+LeaderBoard.TeamWeightGetter.Set(function(team) {
+ return team.Properties.Get("Deaths").Value;
+});
+// ��� ������ � ����������
+LeaderBoard.PlayersWeightGetter.Set(function(player) {
+ return player.Properties.Get("Kills").Value;
+});
+
+// ������ ��� �������� ������
+Ui.GetContext().TeamProp1.Value = { Team: "Blue", Prop: "Deaths" };
+Ui.GetContext().TeamProp2.Value = { Team: "Red", Prop: "Deaths" };
+
+
+
+
 
 
 
