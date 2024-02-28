@@ -1,11 +1,11 @@
 {
-  "Name": "<color=orange>ПАРКУР НА АДМИНКУ</a>",
-  "Description": "<color=red>ПаРкУр На АдМиНкУ</a>",
+  "Name": "<color=orange>PEACE|НО С ОРУЖИЕМ!!!</a>",
+  "Description": "<color=red>МИР С ОРУЖИЕМ!</a>",
   "StartClientVersion": 334,
   "MapLists": [
     {
       "MapListId": 324,
-      "Name": "Карты для режима:|ПАРКУР НА АДМИНКУ"
+      "Name": "ТДМ КАРТЫ "OFFICIAL""
     }
   ],
   "Parameters": {
