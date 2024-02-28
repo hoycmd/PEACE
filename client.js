@@ -58,12 +58,7 @@ Ui.getContext().Hint.Value = "Hint/BuildBase";
 // ������������ ���������
 var inventory = Inventory.GetContext();
 inventory.Main.Value = true;
-inventory.Mainfinity.Value = true;
-inventory.Secondaryfinity.Value = true;
-inventory.Secondary.Value = true;
-inventory.Melee.Value = true;
-inventory.Explosive.Value = true;
-inventory.Explosivefinity.Value = true;
+inventory.Mainfinity.Value = 
 inventory.Build.Value = true;
 inventory.BuildInfinity.Value = true;
 
